@@ -3,7 +3,7 @@ name: build_release
 on:
   workflow_dispatch:
   schedule:
-    - cron: '20 17 * * *' # 定时任务北京时间凌晨1:20运行
+    - cron: '55 13 * * *' # 定时任务北京时间凌晨1:20运行
   push:
     branches:
       - master
