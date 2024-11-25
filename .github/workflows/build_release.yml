@@ -3,48 +3,13 @@ name: build_release
 on:
   workflow_dispatch:
   schedule:
-    - cron: '55 13 * * *' # 定时任务北京时间凌晨1:20运行
-  push:
-    branches:
-      - master
+    - cron: '56 13 * * *' # 每天凌晨1点40分执行
 
 jobs:
-  check_changes:
+  build_release:
     runs-on: ubuntu-latest
-    outputs:
-      has_changes: ${{ steps.check_changes.outputs.has_changes }}
-
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Check for Changes
-        id: check_changes
-        run: |
-          latest_tag=$(git describe --tags --abbrev=0 2>/dev/null || echo "")
-          if [ -z "$latest_tag" ]; then
-            echo "No tags found."
-            echo "has_changes=true" >> $GITHUB_OUTPUT
-          else
-            changes=$(git diff --name-only $latest_tag HEAD -- ./src)
-            if [ -z "$changes" ]; then
-              echo "No changes detected in ./src"
-              echo "has_changes=false" >> $GITHUB_OUTPUT
-            else
-              echo "Changes detected in ./src:"
-              echo "$changes"
-              echo "has_changes=true" >> $GITHUB_OUTPUT
-            fi
-          fi
-
-  auto_build_release:
-    needs: check_changes
-    runs-on: ubuntu-latest
-    if: github.event_name != 'schedule' || needs.check_changes.outputs.has_changes == 'true'
     outputs:
       version: ${{ steps.version.outputs.version }}
-
     steps:
       - uses: actions/checkout@v4
         with:
