@@ -22,7 +22,7 @@ jobs:
       - name: Check for Changes
         id: check_changes
         run: |
-          latest_tag=$(git describe --tags --abbrev=0 2>/dev/null)
+          latest_tag=$(git describe --tags --abbrev=0 2>/dev/null || echo "")
           if [ -z "$latest_tag" ]; then
             echo "No tags found."
             echo "has_changes=true" >> $GITHUB_OUTPUT
