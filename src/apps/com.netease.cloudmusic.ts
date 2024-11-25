@@ -17,10 +17,12 @@ export default defineGkdApp({
           key: 0,
           excludeActivityIds:
             'com.netease.cloudmusic.music.biz.setting.activity.SettingActivity',
-          matches: '[text*="跳过"][text.length<10][visibleToUser=true]',
+          matches:
+            '[text*="跳过"||text*="Skip"][text.length<10][visibleToUser=true]',
           snapshotUrls: [
             'https://i.gkd.li/i/15092772',
             'https://i.gkd.li/i/15092814', // 避免误触
+            'https://i.gkd.li/i/17892200', // 'Skip' for English users.
           ],
         },
       ],
@@ -395,7 +397,7 @@ export default defineGkdApp({
         {
           fastQuery: true,
           activityIds: 'com.netease.cloudmusic.activity.MainActivity',
-          matches: '@ImageView[clickable=true] <n * > [text="查看我的勋章"]',
+          matches: '@ImageView[clickable=true] +7 [text="查看我的勋章"]',
           exampleUrls:
             'https://m.gkd.li/57941037/39e34e7d-eae3-4a54-9794-97c2528d13fb',
           snapshotUrls: 'https://i.gkd.li/i/14926750',
