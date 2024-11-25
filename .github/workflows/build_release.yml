@@ -1,4 +1,4 @@
-name: auto_build_release
+name: build_release
 
 on:
   workflow_dispatch:
