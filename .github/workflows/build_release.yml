@@ -3,7 +3,7 @@ name: build_release
 on:
   workflow_dispatch:
   schedule:
-    - cron: '55 17 * * *' # 定时任务北京时间凌晨1:20运行
+    - cron: '20 17 * * *' # 定时任务北京时间凌晨1:20运行
   push:
     branches:
       - master
@@ -22,7 +22,7 @@ jobs:
       - name: Check for Changes
         id: check_changes
         run: |
-          latest_tag=$(git describe --tags --abbrev=0)
+          latest_tag=$(git describe --tags --abbrev=0 2>/dev/null)
           if [ -z "$latest_tag" ]; then
             echo "No tags found."
             echo "has_changes=true" >> $GITHUB_OUTPUT
