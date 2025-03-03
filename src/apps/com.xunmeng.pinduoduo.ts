@@ -36,7 +36,7 @@ export default defineGkdApp({
           fastQuery: true,
           action: 'back',
           matches:
-            'ImageView[visibleToUser=true][width<120][height<120] <<(1,2,3) @ViewGroup[childCount=1][clickable=true] <<n ViewGroup[vid="pdd"]',
+            'ImageView[visibleToUser=true][width<120][height<120] <<(1,2,3) @ViewGroup[childCount=1][clickable=true] <<n ViewGroup[visibleToUser=true][vid="pdd"]',
           exampleUrls: 'https://e.gkd.li/1d6f07ff-15b6-4a87-80de-79a712aebea0',
           snapshotUrls: 'https://i.gkd.li/i/18481318',
         },
@@ -46,7 +46,7 @@ export default defineGkdApp({
           fastQuery: true,
           action: 'back',
           matches:
-            '@ImageView[visibleToUser=true][width<120][height<120][clickable=true] <<(1,2,3) ViewGroup[childCount=1] <<n ViewGroup[vid="pdd"]',
+            '@ImageView[visibleToUser=true][width<120][height<120][clickable=true] <<(1,2,3) ViewGroup[childCount=1] <<n ViewGroup[visibleToUser=true][vid="pdd"]',
           snapshotUrls: 'https://i.gkd.li/i/14456101',
         },
 
