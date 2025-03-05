@@ -15,11 +15,7 @@ export default defineGkdApp({
       rules: [
         {
           matches: '[vid="skip"][visibleToUser=true]',
-          exampleUrls: 'https://e.gkd.li/670b95f6-12d0-4787-9158-98ac52eb1641',
-          snapshotUrls: [
-            'https://i.gkd.li/i/16828031',
-            'https://i.gkd.li/i/16828053',
-          ],
+          snapshotUrls: 'https://i.gkd.li/i/16828053',
         },
       ],
     },
@@ -35,7 +31,6 @@ export default defineGkdApp({
           activityIds: 'com.xiaomi.jr.app.MiFinanceActivity',
           matches:
             'FrameLayout >2 View[childCount=2] >2 View[childCount=2] > @ImageView[clickable=true][index=0][visibleToUser=true] <<n [vid="flutter_container"]',
-          exampleUrls: 'https://e.gkd.li/9d8a1bb4-40ab-4312-8f5b-ef224e18720e',
           snapshotUrls: 'https://i.gkd.li/i/16828039',
         },
       ],

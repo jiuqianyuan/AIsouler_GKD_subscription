@@ -5,24 +5,17 @@ export default defineGkdApp({
   name: '系统更新',
   groups: [
     {
-      key: 0,
-      name: '更新提示-智能更新弹窗',
+      key: 1,
+      name: '更新提示-MIUI更新弹窗',
       fastQuery: true,
-      matchTime: 10000,
+      matchTime: 5000,
       actionMaximum: 1,
       resetMatch: 'app',
       rules: [
         {
-          activityIds: ['.MainActivity', '.UpdateActivity'],
-          matches: [
-            '[vid="alertTitle"][text="开启智能更新" || text="Install automatically?"]',
-            '[id="android:id/button2"][text="暂不开启" || text="No"]',
-          ],
-          snapshotUrls: [
-            'https://i.gkd.li/i/15386937',
-            'https://i.gkd.li/i/15386869',
-            'https://i.gkd.li/i/18469146',
-          ],
+          activityIds: '.MainActivity',
+          matches: ['[text="开启智能更新"]', '[text="暂不开启"]'],
+          snapshotUrls: 'https://i.gkd.li/i/15127998',
         },
       ],
     },
