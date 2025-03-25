@@ -1,6 +1,6 @@
 {
   "name": "@jiuqianyuan/aisouler_gkd_subscription",
-  "version": "0.0.193",
+  "version": "0.0.194",
   "type": "module",
   "gkd": {
     "outDir": "dist",
