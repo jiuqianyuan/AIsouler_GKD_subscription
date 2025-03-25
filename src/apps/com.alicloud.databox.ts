@@ -5,7 +5,7 @@ export default defineGkdApp({
   name: '阿里云盘',
   groups: [
     {
-      key: 0,
+      key: 1,
       name: '功能类-自动签到',
       fastQuery: true,
       matchTime: 10000,
@@ -25,32 +25,16 @@ export default defineGkdApp({
           ],
         },
         {
-          preKeys: [0],
+          // preKeys: [0], 有概率被其他规则打断
           key: 1,
           action: 'back',
           matches: '[vid="ivCardBackBackground"][visibleToUser=true]',
-          snapshotUrls: 'https://i.gkd.li/i/15144565',
+          snapshotUrls: 'https://i.gkd.li/i/15600210',
         },
       ],
     },
     {
-      key: 1,
-      name: '全屏广告-活动弹窗',
-      fastQuery: true,
-      matchTime: 10000,
-      actionMaximum: 1,
-      resetMatch: 'app',
-      rules: [
-        {
-          activityIds: '.MainActivity',
-          matches:
-            '@TextView[clickable=true][visibleToUser=true] - Image[text!=null] < View < View < View < WebView < WebView < [vid="webContainer"]',
-          snapshotUrls: 'https://i.gkd.li/i/14235204',
-        },
-      ],
-    },
-    {
-      key: 3,
+      key: 2,
       name: '更新提示',
       fastQuery: true,
       matchTime: 10000,
@@ -60,57 +44,53 @@ export default defineGkdApp({
         {
           activityIds: '.MainActivity',
           matches:
-            '[text^="立即了解"] -3 @View[clickable=true] <<n [vid="webContainer"]',
+            '[text*="新版本"] >4 View[childCount=4] > @View[clickable=true][childCount=1] > Image[childCount=0] <<n [vid="webContainer"]',
           snapshotUrls: 'https://i.gkd.li/i/13806865',
         },
       ],
     },
     {
-      key: 4,
-      name: '功能类-[开启相册自动备份功能]弹窗',
-      desc: '关闭弹窗',
-      rules: [
-        {
-          fastQuery: true,
-          activityIds: '.MainActivity',
-          matches:
-            '@TextView[childCount=0][clickable=true][visibleToUser=true] <4 View[childCount=4] < View < View < WebView < WebView < [vid="webContainer"]',
-          snapshotUrls: 'https://i.gkd.li/i/14414446',
-        },
-      ],
-    },
-    {
-      key: 5,
-      name: '功能类-扫描二维码登录时自动点击登录',
+      key: 3,
+      name: '功能类-关闭[开启相册自动备份功能]弹窗',
       fastQuery: true,
       actionMaximum: 1,
       resetMatch: 'app',
       rules: [
         {
+          activityIds: '.MainActivity',
+          matches:
+            '[text="允许后台自动备份"] < * +3 @TextView[clickable=true][index=parent.childCount.minus(1)] <<n [vid="webContainer"]',
+          snapshotUrls: 'https://i.gkd.li/i/14414446',
+        },
+      ],
+    },
+    {
+      key: 4,
+      name: '功能类-自动授权登录',
+      fastQuery: true,
+      actionMaximum: 1,
+      actionMaximumKey: 0,
+      rules: [
+        {
+          key: 0,
           activityIds: 'com.taobao.login4android.scan.QrScanActivity',
           matches: '[text="确认并登录"][clickable=true]',
           snapshotUrls: 'https://i.gkd.li/i/14414503', // 该页面不允许截图所以快照页面是黑屏，但不影响编写规则
         },
-      ],
-    },
-    {
-      key: 6,
-      name: '全屏广告-[容量使用超限]提示',
-      desc: '点击关闭',
-      rules: [
         {
-          fastQuery: true,
-          activityIds: 'com.alicloud.databox.MainActivity',
-          matches: ['[text="容量使用超限"]', '[vid="layout_close"]'],
-          exampleUrls:
-            'https://m.gkd.li/57941037/a219a480-c0a3-4064-832d-533f66995fed',
-          snapshotUrls: 'https://i.gkd.li/i/15158788',
+          key: 1,
+          activityIds: '.webview.jsbridge.BridgeWebViewActivity',
+          matches: [
+            'TextView[text="登录与授权"]',
+            '@[childCount=0][text="允许"] <<n [vid="webContainer"]',
+          ],
+          snapshotUrls: 'https://i.gkd.li/i/16086539',
         },
       ],
     },
     {
-      key: 7,
-      name: '局部广告-卡片广告',
+      key: 5,
+      name: '全屏广告-弹窗广告',
       fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
@@ -118,9 +98,25 @@ export default defineGkdApp({
       rules: [
         {
           key: 0,
-          activityIds: 'com.alicloud.databox.transferpage.TransferListActivity',
-          matches: '[vid="close"]',
-          snapshotUrls: 'https://i.gkd.li/i/15433289',
+          action: 'back',
+          activityIds: '.MainActivity',
+          matches:
+            'WebView[text!=null] > View[childCount=1] > View[childCount=1] > View[childCount=3] > @TextView[index=1][childCount=0][visibleToUser=true] <<n [vid="webContainer"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14235204',
+            'https://i.gkd.li/i/15524739',
+          ],
+        },
+        {
+          key: 1,
+          action: 'back',
+          activityIds: '.MainActivity',
+          matches:
+            'View[text=""] > @[visibleToUser=true][text*="自动备份"] <<n [vid="webContainer"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/16799126',
+            'https://i.gkd.li/i/16861314',
+          ],
         },
       ],
     },

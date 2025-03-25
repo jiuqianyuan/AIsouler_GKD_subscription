@@ -6,12 +6,15 @@ export default defineGkdApp({
   groups: [
     {
       key: 1,
-      name: '功能类-删除时勾选[同时从云端删除]',
+      name: '功能类-清空回收站时点击[永久删除]',
       rules: [
         {
-          activityIds: 'com.miui.gallery.activity.InternalPhotoPageActivity',
-          matches: '[text="同时从云端删除"][checked=false]',
-          snapshotUrls: 'https://i.gkd.li/i/15804289',
+          fastQuery: true,
+          matchRoot: true,
+          activityIds: '.activity.TrashActivity',
+          matches: ['[text="清空回收站"]', '[text="永久删除"]'],
+          snapshotUrls: 'https://i.gkd.li/i/17529154',
+          excludeSnapshotUrls: 'https://i.gkd.li/i/17529155',
         },
       ],
     },

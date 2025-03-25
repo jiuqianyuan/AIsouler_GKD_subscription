@@ -5,7 +5,7 @@ export default defineGkdApp({
   name: '中国电信',
   groups: [
     {
-      key: -1,
+      key: 0,
       name: '开屏广告',
       fastQuery: true,
       matchTime: 10000,
@@ -15,30 +15,13 @@ export default defineGkdApp({
       rules: [
         {
           matches: '[text*="跳过"][text.length<10][visibleToUser=true]',
-          snapshotUrls: [
-            'https://i.gkd.li/i/15084759',
-            'https://i.gkd.li/i/15079224', // 全局规则在此页面误触
-          ],
+          snapshotUrls: 'https://i.gkd.li/i/15084759',
+          excludeSnapshotUrls: 'https://i.gkd.li/i/15079224', // 全局规则在此误触
         },
       ],
     },
     {
       key: 1,
-      name: '功能类-软件更新/安装后的用户引导',
-      fastQuery: true,
-      matchTime: 10000,
-      actionMaximum: 1,
-      resetMatch: 'app',
-      rules: [
-        {
-          activityIds: 'com.ct.client.activity.UserGuideActivity',
-          matches: '[id="com.ct.client:id/tvSkip"]',
-          snapshotUrls: 'https://i.gkd.li/i/12508971',
-        },
-      ],
-    },
-    {
-      key: 2,
       name: '更新提示',
       fastQuery: true,
       matchTime: 10000,
@@ -46,17 +29,9 @@ export default defineGkdApp({
       resetMatch: 'app',
       rules: [
         {
-          activityIds: [
-            '.activity.MainActivity',
-            '.activity.SplashActivity',
-            '.common.ConfirmDialogActivity',
-          ],
-          matches: 'LinearLayout > [text="取消升级"]',
-          snapshotUrls: [
-            'https://i.gkd.li/i/12819594',
-            'https://i.gkd.li/i/13316168',
-            'https://i.gkd.li/i/13695096',
-          ],
+          activityIds: '.common.ConfirmDialogActivity',
+          matches: '[text="取消升级"]',
+          snapshotUrls: 'https://i.gkd.li/i/15040579',
         },
       ],
     },
@@ -88,29 +63,6 @@ export default defineGkdApp({
       activityIds: 'com.ct.client.common.webview.OnlineBusinessWebkitActivity',
       rules: 'Image[text="tishi-close"]',
       snapshotUrls: 'https://i.gkd.li/i/12913804',
-    },
-    {
-      key: 5,
-      name: '权限提示-通知权限',
-      desc: '自动点击关闭',
-      matchTime: 10000,
-      actionMaximum: 1,
-      resetMatch: 'app',
-      // fastQuery: true, 实机测试使用无法跳过
-      rules: [
-        {
-          key: 0,
-          matches: 'ImageView[id="com.ct.client:id/msg_close"]',
-          snapshotUrls: 'https://i.gkd.li/i/13043522',
-        },
-        {
-          key: 1,
-          fastQuery: true,
-          activityIds: 'com.ct.client.activity.MainActivity',
-          matches: '[text^="开启消息通知"] - [vid="ivClose"]',
-          snapshotUrls: 'https://i.gkd.li/i/15209597',
-        },
-      ],
     },
     {
       key: 6,

@@ -6,22 +6,16 @@ export default defineGkdApp({
   groups: [
     {
       key: 0,
-      name: '权限提示-通知权限',
-      fastQuery: true,
+      name: '开屏广告',
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
+      priorityTime: 10000,
       rules: [
         {
-          activityIds: [
-            '.module.main.activity.MainActivity',
-            '.module.launcher.WelcomeActivity',
-          ],
-          matches: '@ImageView[id="com.hpbr.bosszhipin:id/iv_cancle"]',
-          snapshotUrls: [
-            'https://i.gkd.li/i/13440781',
-            'https://i.gkd.li/i/13623476',
-          ],
+          fastQuery: true,
+          matches: '[text*="跳过"][text.length<10][visibleToUser=true]',
+          snapshotUrls: 'https://i.gkd.li/i/18765031',
         },
       ],
     },

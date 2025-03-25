@@ -8,28 +8,15 @@ export default defineGkdApp({
       key: 1,
       name: '权限提示-通知权限',
       fastQuery: true,
+      matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
       rules: [
         {
-          key: 0,
-          matchTime: 30000,
-          activityIds: [
-            '.module.bottomSheet.BottomSheetForFragment',
-            '.WeReadFragmentActivity',
-          ],
-          matches: '[id="com.tencent.weread:id/open_notification_close"]',
-          snapshotUrls: [
-            'https://i.gkd.li/i/12642247',
-            'https://i.gkd.li/i/13233735',
-          ],
-        },
-        {
-          key: 1,
+          action: 'back',
           activityIds: '.WeReadFragmentActivity',
-          matches:
-            '[text="开启推送通知"] +3 [clickable=true][visibleToUser=true]',
-          snapshotUrls: 'https://i.gkd.li/i/14190089',
+          matches: '[vid="open_notification_title"]',
+          snapshotUrls: 'https://i.gkd.li/i/15797560',
         },
       ],
     },

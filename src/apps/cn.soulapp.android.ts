@@ -128,5 +128,19 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 7,
+      name: '全屏广告-送礼开聊',
+      fastQuery: true,
+      matchTime: 10000,
+      actionMaximum: 1,
+      activityIds: '.component.chat.ConversationActivity',
+      rules: [
+        {
+          matches: '[vid="cl_gift_normal"] > TextView[vid="tv_btn_close"]',
+          snapshotUrls: 'https://i.gkd.li/i/19448971',
+        },
+      ],
+    },
   ],
 });

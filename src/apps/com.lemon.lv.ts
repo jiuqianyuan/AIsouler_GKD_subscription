@@ -5,7 +5,7 @@ export default defineGkdApp({
   name: '剪映',
   groups: [
     {
-      key: 0,
+      key: 1,
       name: '分段广告-导出界面底部广告',
       desc: '点击[关闭]-点击[不感兴趣]',
       fastQuery: true,
@@ -28,29 +28,36 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 1,
-      name: '局部广告-选择素材界面上方广告',
+      key: 2,
+      name: '权限提示-通知权限',
+      fastQuery: true,
+      actionMaximum: 2,
+      resetMatch: 'app',
       rules: [
         {
-          fastQuery: true,
-          activityIds:
-            'com.vega.libcutsame.select.view.CutSameSelectMediaActivity',
-          matches:
-            '@LynxFlattenUI[clickable=true][visibleToUser=true] +6 [text="立即下载"]',
-          snapshotUrls: 'https://i.gkd.li/i/14122865',
+          activityIds: 'com.vega.main.MainActivity',
+          matches: ['[text*="开启通知"]', '[vid="close"]'],
+          snapshotUrls: [
+            'https://i.gkd.li/i/15046675',
+            'https://i.gkd.li/i/15046684',
+          ],
         },
       ],
     },
     {
-      key: 2,
-      name: '功能类-恢复创作',
-      desc: '自动点击[立即恢复]按钮',
+      key: 3,
+      name: '全屏广告-弹窗广告',
+      actionMaximum: 1,
+      resetMatch: 'app',
       rules: [
         {
           fastQuery: true,
-          activityIds: 'com.vega.main.MainActivity',
-          matches: '[vid="tv_title_resume_design"] +2 [vid="tvResumeNow"]',
-          snapshotUrls: 'https://i.gkd.li/i/14292755',
+          activityIds: 'com.vega.main.TransLynxActivity',
+          matches: [
+            'FlattenUIText[text="剪映纪念日"]',
+            'LynxFlattenUI[text="CloseBtn"]',
+          ],
+          snapshotUrls: 'https://i.gkd.li/i/15046676',
         },
       ],
     },
