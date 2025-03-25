@@ -130,7 +130,8 @@ export default defineGkdApp({
     },
     {
       key: 7,
-      name: '全屏广告-送礼开聊',
+      name: '功能类-送礼开聊会话',
+      desc: '自动点击先不聊了',
       fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
