@@ -35,9 +35,9 @@ https://registry.npmmirror.com/@jiuqianyuan/aisouler_gkd_subscription/latest/fil
 https://raw.githubusercontent.com/jiuqianyuan/AIsouler_GKD_subscription/main/dist/AIsouler_gkd.json5
 ```
 
-- 当前版本: v194
+- 当前版本: v195
 
-- 当前订阅文件已适配 801 个应用，共有 1789 应用规则组，3 全局规则组
+- 当前订阅文件已适配 801 个应用，共有 1790 应用规则组，3 全局规则组
 
 - 查看 [适配 APP 列表](./dist/README.md)
 
@@ -59,7 +59,7 @@ https://raw.githubusercontent.com/jiuqianyuan/AIsouler_GKD_subscription/main/dis
 
 ## 感谢以下开发者的贡献
 
-![img](https://contrib.rocks/image?repo=AIsouler/GKD_subscription&_v=194)
+![img](https://contrib.rocks/image?repo=AIsouler/GKD_subscription&_v=195)
 
 ## Star History
 
