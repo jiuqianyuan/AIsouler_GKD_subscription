@@ -708,17 +708,13 @@ export default defineGkdApp({
     },
     {
       key: 38,
-      name: '功能类-自动语音转文字',
-      desc: '点击语音旁边的转文字/长按语音后点击转文字',
+      name: '功能类-点击语音旁的转文字',
       rules: [
         {
           fastQuery: true,
           activityIds: '.ui.LauncherUI',
-          matches: '@[clickable=true] >(1,2) [text="转文字"]',
-          snapshotUrls: [
-            'https://i.gkd.li/i/14497389',
-            'https://i.gkd.li/i/14538322',
-          ],
+          matches: '@[clickable=true] > [text="转文字"]',
+          snapshotUrls: 'https://i.gkd.li/i/14497389',
         },
       ],
     },
@@ -733,6 +729,19 @@ export default defineGkdApp({
           matches: 'Button[desc="接听"][visibleToUser=true]',
           exampleUrls: 'https://e.gkd.li/fbfea6ba-ce43-4641-a919-9c21fa49dc73',
           snapshotUrls: 'https://i.gkd.li/i/18225086',
+        },
+      ],
+    },
+    {
+      enable: false,
+      key: 40,
+      name: '功能类-长按语音点击转文字',
+      rules: [
+        {
+          fastQuery: true,
+          activityIds: '.ui.LauncherUI',
+          matches: '@[clickable=true] >2 [text="转文字"]',
+          snapshotUrls: 'https://i.gkd.li/i/14538322',
         },
       ],
     },
