@@ -33,13 +33,13 @@
 - npmmirror源（大陆用户推荐）
 
 ```txt
-https://registry.npmmirror.com/@aisouler/gkd_subscription/latest/files/dist/AIsouler_gkd.json5
+https://registry.npmmirror.com/@jiuqianyuan/aisouler_gkd_subscription/latest/files/dist/AIsouler_gkd.json5
 ```
 
 - GitHub源
 
 ```txt
-https://raw.githubusercontent.com/AIsouler/GKD_subscription/main/dist/AIsouler_gkd.json5
+https://raw.githubusercontent.com/jiuqianyuan/AIsouler_GKD_subscription/main/dist/AIsouler_gkd.json5
 ```
 
 - 当前版本: v203
