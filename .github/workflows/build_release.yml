@@ -23,7 +23,7 @@ jobs:
           echo "Previous tag: $prev_tag"
 
           if [ "$prev_tag" != "none" ]; then
-            if ! git diff --exit-code "$prev_tag" HEAD -- src; then
+            if git diff --exit-code "$prev_tag" HEAD -- src; then
               echo "No changes detected in 'src' directory between $prev_tag HEAD and the latest commit."
               echo "changed=false" >> $GITHUB_ENV
             fi
