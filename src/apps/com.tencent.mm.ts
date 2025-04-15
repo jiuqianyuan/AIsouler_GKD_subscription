@@ -7,7 +7,7 @@ export default defineGkdApp({
     {
       key: 0,
       name: '分段广告-朋友圈广告',
-      desc: '点击卡片广告右上角,直接关闭/出现菜单,确认关闭',
+      desc: '点击卡片广告右上角,直接关闭/出现菜单,确认关闭1',
       activityIds: [
         '.plugin.sns.ui.SnsTimeLineUI',
         '.plugin.sns.ui.improve.ImproveSnsTimelineUI',
