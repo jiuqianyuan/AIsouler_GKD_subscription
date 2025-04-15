@@ -709,7 +709,7 @@ export default defineGkdApp({
     },
     {
       key: 40,
-      name: '功能类-长按语音点击转文字',
+      name: '功能类-长按语音点击转文字2',
       desc: '长按语音-弹出菜单-点击转文字',
       rules: [
         {
