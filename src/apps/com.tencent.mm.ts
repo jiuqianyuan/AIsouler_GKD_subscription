@@ -681,15 +681,37 @@ export default defineGkdApp({
     },
     {
       key: 38,
-      name: '功能类-自动语音转文字',
-      desc: '点击语音旁边的转文字',
+      name: '功能类-未读语音转文字',
+      activityIds: ['.ui.LauncherUI', '.ui.chatting.ChattingUI'],
       rules: [
         {
+          key: 0,
+          name: '点击语音条旁转文字',
           fastQuery: true,
-          activityIds: ['.ui.LauncherUI', '.ui.chatting.ChattingUI'],
           matches: '@[clickable=true] > [text="转文字"]',
           snapshotUrls: 'https://i.gkd.li/i/18135057',
           excludeSnapshotUrls: 'https://i.gkd.li/i/18135054',
+        },
+        {
+          key: 1,
+          name: '长按带红点的未读语音条',
+          fastQuery: true,
+          action: 'longClickCenter',
+          matches:
+            "ImageView <2 RelativeLayout[childCount=2] >3 @TextView + TextView[text $= '\"']",
+          exampleUrls: 'https://e.gkd.li/27629753-3e59-4c46-94db-e677af9c36e9',
+          snapshotUrls: 'https://i.gkd.li/i/19792161',
+        },
+        {
+          preKeys: 1,
+          name: '点击语音条菜单里的转文字',
+          fastQuery: true,
+          matches: '@[clickable=true] >2 [text="转文字"]',
+          exampleUrls: 'https://e.gkd.li/c35fafc8-9d96-4178-9aac-f16394d2c666',
+          snapshotUrls: [
+            'https://i.gkd.li/i/19774491',
+            'https://i.gkd.li/i/19792042',
+          ],
         },
       ],
     },
