@@ -1,3 +1,27 @@
+# @jiuqianyuan/AIsouler_GKD_subscription
+
+## 自用不接受任何提交
+
+## 订阅
+
+复制以下任意一个链接到 GKD 即可使用本订阅规则
+
+- npmmirror源（国内镜像，推荐大陆用户使用）
+
+```txt
+https://registry.npmmirror.com/@jiuqianyuan/aisouler_gkd_subscription/latest/files/dist/AIsouler_gkd.json5
+```
+
+- GitHub源
+
+```txt
+https://raw.githubusercontent.com/jiuqianyuan/AIsouler_GKD_subscription/main/dist/AIsouler_gkd.json5
+```
+
+
+
+---
+
 # @AIsouler/GKD_subscription
 
 ---
