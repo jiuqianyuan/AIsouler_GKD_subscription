@@ -39,7 +39,7 @@ export default defineGkdApp({
             '.ui.activity.MainFrameActivity',
           ],
           excludeMatches:
-            '[text="我的订单" || text="聊天"][bottom<500][visibleToUser=true]',
+            '[text="我的订单" || text="聊天"][bottom<1000][visibleToUser=true]',
           matches:
             '[text="开心收下" || text="去抢购" || text="立即抽免单" || text="去刮奖" || text="立即领取" || text="去领大额金币" || text="送你大额现金" || text*="红包助手" || text="刮刮卡发来的消息通知" || text="立即充值" || text="打款金额"][top>600][visibleToUser=true]',
           snapshotUrls: [
@@ -58,6 +58,7 @@ export default defineGkdApp({
             'https://i.gkd.li/i/18481318',
           ],
           excludeSnapshotUrls: [
+            'https://i.gkd.li/i/29178722',
             'https://i.gkd.li/i/23352586',
             'https://i.gkd.li/i/23607429',
           ],
