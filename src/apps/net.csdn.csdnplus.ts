@@ -65,6 +65,21 @@ export default defineGkdApp({
       ],
     },
     {
+      key: 4,
+      name: '全屏广告-弹窗广告',
+      desc: '点击【x】',
+      rules: [
+        {
+          fastQuery: true,
+          activityIds: 'net.csdn.csdnplus.activity.MainActivity',
+          matches:
+            'LinearLayout[childCount=2] > [vid="img_cancel"][clickable=true][visibleToUser=true]',
+          snapshotUrls: 'https://i.gkd.li/i/25171470',
+          exampleUrls: 'https://e.gkd.li/3debb965-7773-4160-b172-15dc052ac6c9',
+        },
+      ],
+    },
+    {
       key: 10,
       name: '权限提示-通知权限',
       fastQuery: true,
@@ -102,10 +117,11 @@ export default defineGkdApp({
           preKeys: [0],
           key: 1,
           activityIds: 'net.csdn.csdnplus.mvvm.ui.activity.BlogDetailActivity',
-          matches: '@LinearLayout[clickable=true] > [text="不感兴趣"]',
+          matches: '@LinearLayout[clickable=true] >(1,2) [text="不感兴趣"]',
           snapshotUrls: [
             'https://i.gkd.li/i/13830858',
             'https://i.gkd.li/i/14312349',
+            'https://i.gkd.li/i/24376480', //v6.8.1
           ],
         },
       ],
