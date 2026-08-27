@@ -143,8 +143,11 @@ export default defineGkdApp({
       rules: [
         {
           activityIds: '.component.chat.ConversationActivity',
-          matches: '[vid="cl_gift_normal"] > TextView[vid="tv_btn_close"]',
-          snapshotUrls: 'https://i.gkd.li/i/19448971',
+          matches: '[vid="tv_btn_close"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/19448971',
+            'https://i.gkd.li/i/31518567',
+          ],
         },
       ],
     },
