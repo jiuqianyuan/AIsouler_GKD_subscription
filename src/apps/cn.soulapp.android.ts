@@ -142,9 +142,13 @@ export default defineGkdApp({
       actionMaximum: 1,
       rules: [
         {
-          activityIds: '.component.chat.ConversationActivity',
+          activityIds: [
+            '.component.chat.ConversationActivity',
+            '.component.home.user.UserHomeActivity',
+          ],
           matches: '[vid="tv_btn_close"]',
           snapshotUrls: [
+            'https://i.gkd.li/i/31590054',
             'https://i.gkd.li/i/19448971',
             'https://i.gkd.li/i/31518567',
           ],
